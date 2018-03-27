@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tareas xmlns:has="http://ji.ehu.es/has">
+  <tarea codigo="INCLASS">
+    <descripcion>In-Class2</descripcion>
+    <hestimadas>3</hestimadas>
+    <explotacion>False</explotacion>
+    <tipotarea>Laboratorio</tipotarea>
+  </tarea>
+  <tarea codigo="jhh">
+    <descripcion>jbk</descripcion>
+    <hestimadas>4</hestimadas>
+    <explotacion>False</explotacion>
+    <tipotarea>Laboratorio</tipotarea>
+  </tarea>
+  <tarea codigo="PruebaDefinitiva">
+    <descripcion>Visualizacion PreAzure</descripcion>
+    <hestimadas>1</hestimadas>
+    <explotacion>False</explotacion>
+    <tipotarea>Ejercicio</tipotarea>
+  </tarea>
+  <tarea codigo="SEG08-Test12">
+    <descripcion>Test 12 de la asignatura</descripcion>
+    <hestimadas>3</hestimadas>
+    <explotacion>False</explotacion>
+    <tipotarea>Examen</tipotarea>
+  </tarea>
+  <tarea codigo="SEG08-Trabajo20">
+    <descripcion>Tareas del trabajo 20 de la asignatura</descripcion>
+    <hestimadas>10</hestimadas>
+    <explotacion>False</explotacion>
+    <tipotarea>Trabajo</tipotarea>
+  </tarea>
+  <tarea codigo="SEGLABB">
+    <descripcion>labolabo</descripcion>
+    <hestimadas>2</hestimadas>
+    <explotacion>False</explotacion>
+    <tipotarea>Laboratorio</tipotarea>
+  </tarea>
+</tareas>

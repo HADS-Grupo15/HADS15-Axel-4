@@ -1,0 +1,50 @@
+[
+  {
+    "Codigo": "INCLASS",
+    "Descripcion": "In-Class2",
+    "CodAsig": "SEG",
+    "HEstimadas": 3,
+    "Explotacion": false,
+    "TipoTarea": "Laboratorio"
+  },
+  {
+    "Codigo": "jhh",
+    "Descripcion": "jbk",
+    "CodAsig": "SEG",
+    "HEstimadas": 4,
+    "Explotacion": false,
+    "TipoTarea": "Laboratorio"
+  },
+  {
+    "Codigo": "PruebaDefinitiva",
+    "Descripcion": "Visualizacion PreAzure",
+    "CodAsig": "SEG",
+    "HEstimadas": 1,
+    "Explotacion": false,
+    "TipoTarea": "Ejercicio"
+  },
+  {
+    "Codigo": "SEG08-Test12",
+    "Descripcion": "Test 12 de la asignatura",
+    "CodAsig": "SEG",
+    "HEstimadas": 3,
+    "Explotacion": false,
+    "TipoTarea": "Examen"
+  },
+  {
+    "Codigo": "SEG08-Trabajo20",
+    "Descripcion": "Tareas del trabajo 20 de la asignatura",
+    "CodAsig": "SEG",
+    "HEstimadas": 10,
+    "Explotacion": false,
+    "TipoTarea": "Trabajo"
+  },
+  {
+    "Codigo": "SEGLABB",
+    "Descripcion": "labolabo",
+    "CodAsig": "SEG",
+    "HEstimadas": 2,
+    "Explotacion": false,
+    "TipoTarea": "Laboratorio"
+  }
+]
