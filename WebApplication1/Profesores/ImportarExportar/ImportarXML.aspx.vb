@@ -126,7 +126,7 @@ Public Class ImportarXML
 
     Protected Sub ImageButton1_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton1.Click
 
-        Response.Redirect("./Profesor.aspx")
+        Response.Redirect("~/Profesores/Profesor.aspx")
 
     End Sub
 
@@ -134,7 +134,7 @@ Public Class ImportarXML
 
         Session.Abandon()
 
-        Response.Redirect("../Inicio.aspx")
+        Response.Redirect("~/Inicio.aspx")
 
     End Sub
 

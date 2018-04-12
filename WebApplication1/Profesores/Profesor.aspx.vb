@@ -21,13 +21,13 @@
 
     Protected Sub LinkButton10_Click(sender As Object, e As EventArgs) Handles LinkButton10.Click
 
-        Response.Redirect("./ImportarXML.aspx")
+        Response.Redirect("./ImportarExportar/ImportarXML.aspx")
 
     End Sub
 
     Protected Sub LinkButton11_Click(sender As Object, e As EventArgs) Handles LinkButton11.Click
 
-        Response.Redirect("./ExportarTarea.aspx")
+        Response.Redirect("./ImportarExportar/ExportarTarea.aspx")
 
     End Sub
 

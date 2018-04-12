@@ -23,10 +23,17 @@ Public Class Login
             lblAns.Text = "Contraseña errónea"
         Else
             Session("UserID") = txtMail.Text
+
             'Redirigir a aplicación principal
             If tipoUsuario(txtMail.Text) = "Profesor" Then
+                If txtMail.Text = "vadillo@ehu.es" Then
+                    System.Web.Security.FormsAuthentication.SetAuthCookie("Vadillo", False)
+                Else
+                    System.Web.Security.FormsAuthentication.SetAuthCookie("Profesor", False)
+                End If
                 Response.Redirect("./Profesores/Profesor.aspx")
             Else 'tipo.Read Is "Alumno"
+                System.Web.Security.FormsAuthentication.SetAuthCookie("Alumno", False)
                 Response.Redirect("./Alumnos/Alumno.aspx")
             End If
         End If

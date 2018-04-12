@@ -71,8 +71,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="App_Data_Export\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -102,14 +100,21 @@
     <Content Include="Alumnos\Alumno.aspx" />
     <Content Include="Alumnos\InstanciarTarea.aspx" />
     <Content Include="Alumnos\TareasAlumno.aspx" />
+    <Content Include="App_Data\HAS.xml" />
+    <Content Include="App_Data\SEG.xml" />
+    <Content Include="App_Data\XSLTCodigo.xslt" />
+    <Content Include="App_Data\XSLTDescripcion.xslt" />
+    <Content Include="App_Data\XSLTFile.xsl" />
+    <Content Include="App_Data\XSLTHEstimadas.xslt" />
+    <Content Include="App_Data_Export\SEG.xml" />
     <Content Include="CabeceraInicio.ascx" />
     <Content Include="Confirmar.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="CambiarPassword2.aspx" />
-    <Content Include="Profesores\ExportarTarea.aspx" />
-    <Content Include="Profesores\ImportarXML.aspx" />
+    <Content Include="Profesores\ImportarExportar\ExportarTarea.aspx" />
+    <Content Include="Profesores\ImportarExportar\ImportarXML.aspx" />
     <Content Include="Profesores\InsertarTarea.aspx" />
     <Content Include="Profesores\Profesor.aspx" />
     <Content Include="Profesores\TareasProfesor.aspx" />
@@ -195,17 +200,17 @@
       <DependentUpon>CambiarPassword2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Profesores\ExportarTarea.aspx.designer.vb">
+    <Compile Include="Profesores\ImportarExportar\ExportarTarea.aspx.designer.vb">
       <DependentUpon>ExportarTarea.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profesores\ExportarTarea.aspx.vb">
+    <Compile Include="Profesores\ImportarExportar\ExportarTarea.aspx.vb">
       <DependentUpon>ExportarTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profesores\ImportarXML.aspx.designer.vb">
+    <Compile Include="Profesores\ImportarExportar\ImportarXML.aspx.designer.vb">
       <DependentUpon>ImportarXML.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profesores\ImportarXML.aspx.vb">
+    <Compile Include="Profesores\ImportarExportar\ImportarXML.aspx.vb">
       <DependentUpon>ImportarXML.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
@@ -247,6 +252,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alumnos\Web.config" />
+    <None Include="App_Data\tareas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Data_Export\SEG.json" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -257,6 +267,8 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <Content Include="Profesores\Web.config" />
+    <Content Include="Profesores\ImportarExportar\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
