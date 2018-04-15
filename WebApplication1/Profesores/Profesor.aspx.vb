@@ -9,6 +9,7 @@
 
     Protected Sub ImageButton2_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton2.Click
 
+        FormsAuthentication.SignOut()
         Session.Abandon()
 
         Response.Redirect("../Inicio.aspx")

@@ -1,6 +1,7 @@
 ﻿
 Imports System.Data.SqlClient
 Imports AccesoDatosSQL.accesodatosSQL
+Imports System.Security.Cryptography
 
 Public Class Login
     Inherits System.Web.UI.Page
@@ -27,17 +28,24 @@ Public Class Login
             'Redirigir a aplicación principal
             If tipoUsuario(txtMail.Text) = "Profesor" Then
                 If txtMail.Text = "vadillo@ehu.es" Then
-                    System.Web.Security.FormsAuthentication.SetAuthCookie("Vadillo", False)
+                    'System.Web.Security.FormsAuthentication.SetAuthCookie("Vadillo", False)
+                    System.Web.Security.FormsAuthentication.RedirectFromLoginPage("Vadillo", False)
                 Else
-                    System.Web.Security.FormsAuthentication.SetAuthCookie("Profesor", False)
+                    'System.Web.Security.FormsAuthentication.SetAuthCookie("Profesor", False)
+                    System.Web.Security.FormsAuthentication.RedirectFromLoginPage("Profesor", False)
+
                 End If
-                Response.Redirect("./Profesores/Profesor.aspx")
+                If Request.QueryString("ReturnURL") Is Nothing Then 'Si no se viene de ninguna página de la aplicación
+                    Response.Redirect("./Profesores/Profesor.aspx")
+                End If
             Else 'tipo.Read Is "Alumno"
-                System.Web.Security.FormsAuthentication.SetAuthCookie("Alumno", False)
-                Response.Redirect("./Alumnos/Alumno.aspx")
+                    'System.Web.Security.FormsAuthentication.SetAuthCookie("Alumno", False)
+                    System.Web.Security.FormsAuthentication.RedirectFromLoginPage("Alumno", False)
+                If Request.QueryString("ReturnURL") Is Nothing Then 'Si no se viene de ninguna página de la aplicación
+                    Response.Redirect("./Alumnos/Alumno.aspx")
+                End If
             End If
         End If
-        'End If
     End Sub
 
 End Class

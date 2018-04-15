@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Net.Mail
+Imports System.Security.Cryptography
 
 Public Class accesodatosSQL
 
@@ -44,6 +45,8 @@ Public Class accesodatosSQL
 
         apellidos = apellido1 & " " & apellido2
 
+        Dim passHashed = getSHA256Hash(pass)
+
         Dim query = "insert into Usuarios (email,nombre,apellidos,numconfir,confirmado,tipo,pass) values (
         
         '" & email & "',
@@ -52,7 +55,7 @@ Public Class accesodatosSQL
         '" & numconfir & "',
         '0',
         '" & tipo & "',
-        '" & pass & "'
+        '" & passHashed & "'
         )"
 
         comando = New SqlCommand(query, conexion)
@@ -109,9 +112,11 @@ Public Class accesodatosSQL
             Return -1
         End If
 
+        Dim passwordHashed = getSHA256Hash(password)
+
         conectar()
 
-        Dim query = "select count(*) from Usuarios where email='" & email & "' AND pass='" & password & "'"
+        Dim query = "select count(*) from Usuarios where email='" & email & "' AND pass='" & passwordHashed & "'"
 
         comando = New SqlCommand(query, conexion)
 
@@ -201,7 +206,9 @@ Public Class accesodatosSQL
 
         conectar()
 
-        Dim query = "UPDATE Usuarios SET pass='" & newpass & "' WHERE email='" & email & "' AND numconfir=" & numconfir
+        Dim newpassHashed = getSHA256Hash(newpass)
+
+        Dim query = "UPDATE Usuarios SET pass='" & newpassHashed & "' WHERE email='" & email & "' AND numconfir=" & numconfir
 
         comando = New SqlCommand(query, conexion)
 
@@ -213,6 +220,16 @@ Public Class accesodatosSQL
         cerrarconexion()
         Return 1
 
+    End Function
+
+    Public Shared Function getSHA256Hash(ByVal s As String) As String
+        Dim hasher As SHA256 = SHA256.Create()
+        Dim byteArray As Byte() = hasher.ComputeHash(System.Text.Encoding.Default.GetBytes(s))
+        Dim hashString = New System.Text.StringBuilder
+        For Each theByte As Byte In byteArray
+            hashString.Append(theByte.ToString("x2"))
+        Next
+        Return hashString.ToString
     End Function
 
     Public Shared Sub cerrarconexion()

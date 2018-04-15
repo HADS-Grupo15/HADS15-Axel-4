@@ -49,7 +49,7 @@ Public Class ImportarXML
 
         Dim found As Boolean
 
-        found = System.IO.File.Exists(Server.MapPath("../App_Data/" & DropDownList1.SelectedValue & ".xml")) 'HAS.xml // SEG.xml
+        found = System.IO.File.Exists(Server.MapPath("~/App_Data/" & DropDownList1.SelectedValue & ".xml")) 'HAS.xml // SEG.xml
 
         If found Then
 
@@ -63,7 +63,7 @@ Public Class ImportarXML
 
             xml.DocumentSource = Server.MapPath("~/App_Data/" & DropDownList1.SelectedValue & ".xml")
 
-            xml.TransformSource = Server.MapPath("../App_Data/XSLTFile.xsl")
+            xml.TransformSource = Server.MapPath("~/App_Data/XSLTFile.xsl")
 
         Else
 
@@ -81,7 +81,7 @@ Public Class ImportarXML
 
         Dim xml As New XmlDocument
 
-        xml.Load(Server.MapPath("../App_Data/" & DropDownList1.SelectedValue & ".xml"))
+        xml.Load(Server.MapPath("~/App_Data/" & DropDownList1.SelectedValue & ".xml"))
 
         Dim nodosT As XmlNodeList
 
@@ -132,6 +132,7 @@ Public Class ImportarXML
 
     Protected Sub ImageButton2_Click(sender As Object, e As ImageClickEventArgs) Handles ImageButton2.Click
 
+        FormsAuthentication.SignOut()
         Session.Abandon()
 
         Response.Redirect("~/Inicio.aspx")
@@ -143,25 +144,25 @@ Public Class ImportarXML
 
     Protected Sub btnSortCod_Click(sender As Object, e As EventArgs) Handles btnSortCod.Click
 
-        xml.DocumentSource = Server.MapPath("../App_Data/" & DropDownList1.SelectedValue & ".xml")
+        xml.DocumentSource = Server.MapPath("~/App_Data/" & DropDownList1.SelectedValue & ".xml")
 
-        xml.TransformSource = Server.MapPath("../App_Data/XSLTCodigo.xslt")
+        xml.TransformSource = Server.MapPath("~/App_Data/XSLTCodigo.xslt")
 
     End Sub
 
     Protected Sub btnSortDesc_Click(sender As Object, e As EventArgs) Handles btnSortDesc.Click
 
-        xml.DocumentSource = Server.MapPath("../App_Data/" & DropDownList1.SelectedValue & ".xml")
+        xml.DocumentSource = Server.MapPath("~/App_Data/" & DropDownList1.SelectedValue & ".xml")
 
-        xml.TransformSource = Server.MapPath("../App_Data/XSLTDescripcion.xslt")
+        xml.TransformSource = Server.MapPath("~/App_Data/XSLTDescripcion.xslt")
 
     End Sub
 
     Protected Sub btnSortHE_Click(sender As Object, e As EventArgs) Handles btnSortHE.Click
 
-        xml.DocumentSource = Server.MapPath("../App_Data/" & DropDownList1.SelectedValue & ".xml")
+        xml.DocumentSource = Server.MapPath("~/App_Data/" & DropDownList1.SelectedValue & ".xml")
 
-        xml.TransformSource = Server.MapPath("../App_Data/XSLTHEstimadas.xslt")
+        xml.TransformSource = Server.MapPath("~/App_Data/XSLTHEstimadas.xslt")
 
     End Sub
 

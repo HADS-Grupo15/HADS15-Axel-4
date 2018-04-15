@@ -71,6 +71,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -100,12 +101,6 @@
     <Content Include="Alumnos\Alumno.aspx" />
     <Content Include="Alumnos\InstanciarTarea.aspx" />
     <Content Include="Alumnos\TareasAlumno.aspx" />
-    <Content Include="App_Data\HAS.xml" />
-    <Content Include="App_Data\SEG.xml" />
-    <Content Include="App_Data\XSLTCodigo.xslt" />
-    <Content Include="App_Data\XSLTDescripcion.xslt" />
-    <Content Include="App_Data\XSLTFile.xsl" />
-    <Content Include="App_Data\XSLTHEstimadas.xslt" />
     <Content Include="App_Data_Export\SEG.xml" />
     <Content Include="CabeceraInicio.ascx" />
     <Content Include="Confirmar.aspx" />
@@ -253,9 +248,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Alumnos\Web.config" />
-    <None Include="App_Data\tareas.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="App_Data_Export\SEG.json" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

@@ -21,7 +21,7 @@ Public Class ExportarTarea
     Dim dvFiltroAsignatura As DataView
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Session("UserID") = "blanco@ehu.es"
+        'Session("UserID") = "blanco@ehu.es"
         If Not Page.IsPostBack Then
 
             adapExport = New SqlDataAdapter("SELECT TareasGenericas.Codigo, TareasGenericas.Descripcion, TareasGenericas.CodAsig, TareasGenericas.HEstimadas, TareasGenericas.Explotacion, TareasGenericas.TipoTarea From GruposClase INNER Join TareasGenericas On GruposClase.codigoasig = TareasGenericas.CodAsig INNER Join ProfesoresGrupo On GruposClase.codigo = ProfesoresGrupo.codigogrupo Where ProfesoresGrupo.email = '" & Session("UserID") & "'", conexion)
